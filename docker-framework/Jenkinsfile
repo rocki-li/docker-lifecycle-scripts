@@ -10,6 +10,7 @@ node {
     artServer.username=uname
     artServer.password=pw
     def curlstr="curl -u"+uname+':'+pw+" 'http://47.93.114.82//artifactory/"
+    def artServer = Artifactory.server('artiha-demo')
     def artDocker= Artifactory.docker(artServer)
     def buildInfo = Artifactory.newBuildInfo()
     dir('docker-framework') {
@@ -78,6 +79,7 @@ node {
     artServer.username=uname
     artServer.password=pw
     def curlstr="curl -u"+uname+':'+pw+" 'http://47.93.114.82/artifactory/"
+    def artServer = Artifactory.server('artiha-demo')
     def artDocker= Artifactory.docker(artServer)
     dir('docker-framework/framework-test')
     {
